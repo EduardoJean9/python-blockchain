@@ -32,6 +32,9 @@ class Block:
             f'nonce: {self.nonce})'
         )
 
+    def __eq__(self, other):
+        return self.__dict__ == other.__dict__
+
     @staticmethod
     def mine_block(last_block, data):
         """Mine a block based on the given last_block and data, until a block hash is found that meets
